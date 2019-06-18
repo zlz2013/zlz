@@ -37,7 +37,7 @@ jfdsaf dsa fdfsfdsfs
 
 ## GIT使用
 
-![git结构](img/git.jpeg)
+![git结构](2.jpg)
 
 ### 基本概念
 
