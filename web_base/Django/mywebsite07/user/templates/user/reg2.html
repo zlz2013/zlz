@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单注册</title>
+
+</head>
+<body>
+    <form action="/user/reg2" method="post">
+        {% csrf_token %}
+        <table>
+            {{ reg2.as_table }}
+        </table>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

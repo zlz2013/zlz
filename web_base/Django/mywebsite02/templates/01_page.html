@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!--html lang语言="en"en表示默认英文-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World</title>
+    </head>
+    <body>
+      <!--1.标题标签-->
+        <h5>你是:
+            {% if money > 20 %}年龄大于20
+            {% elif money < 20 %}年龄小于20
+            {% endif %}年龄等于20
+        </h5>
+        <select>
+            {% for c in mylist %}
+            <option value="">{{c}}</option>
+            {% empty %}
+            <option value="">请添加数据</option>
+            {% endfor %}
+        </select>
+        <ul>
+            {% for c in mylist %}
+            {% if forloop.first %}
+            <li>=============</li>
+            {% endif %}
+            <li>第{{forloop.counter}}个城市{{c}}</li>
+
+            {% if forloop.last %}
+            <li>=============</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {#这是一行不显示的内容#}
+        <h1>小泽今天没有来{{name}}</h1>
+        <h2>去哪了呢？{{age}}</h2>
+        <h3>难道？{{myvar | add:1}}</h3>
+        <h3>能传给模板的数据：int float bool dict list 函数 对象</h3>
+        <h4>
+            老祁今天也不在{{mystr}}
+            老祁今天也不在{{mystr | upper}}
+            老祁今天也不在{{mystr|lower }}
+        </h4>
+        <h5>你说奇怪不奇怪{{mylist.1}}</h5>
+        <h6>难道？他们在一起？{{person.age}}</h6>
+      <!--2.段落标签p:不允许嵌套-->
+        <p style="color:red;">
+            小泽最喜欢{{dog1.show_info}}<span style="color:blue">蓝色{{myfun1}}</span>
+        </p>
+      {% comment %}
+      这是多行注释的内容
+      {% endcomment %}
+      <!--3.普通文本-->
+        <span>文本</span>
+        <label for="">label</label>
+      <!--自动加粗b：标签-->
+        <b>bold</b>
+        <strong>strong有语义标签</strong>
+      <!--了解-->
+        <i>italic：斜体</i>
+        <u>underline：自带下划线</u>
+      <!--4.格式标签-->
+        <p style="text-align:right;">
+            换行标签<br>
+            换行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标签<br>
+            水平线水平线$&copy;©¥&yen;<hr>
+            <Day01>
+            &lt;day01&gt;
+        </p>
+
+    </body>
+
+</html>
+

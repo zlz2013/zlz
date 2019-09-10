@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <script>
+        function isRun(y){
+            //闰年判断
+            var r=y%4==0&&y%100!=0||y%400==0
+            return r
+        }
+        function show(){
+            var year=prompt("请输入年")
+            r=isRun(year)
+            console.log(r)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="show()">日期计算</button>
+</body>
+</html>

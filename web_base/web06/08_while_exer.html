@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>循环练习</title>
+    <script>
+        var sum=0
+        var i=1
+        var year=Number(prompt("请输入年份"))
+        var month=Number(prompt("请输入月份"))
+        var day=Number(prompt("请输入天数"))
+        while(i<month){
+            switch(i){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                    sum+=31
+                    break
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    sum+=30
+                    break
+                case 2:
+                    sum+=28
+                    if(year%4==0&&year%100!=0||year%400==0){
+                    sum++}
+            }
+            i++
+        }
+        sum+=day
+        console.log(sum)
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

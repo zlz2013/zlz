@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <script>
+        //一.强制类型转换
+        //1.转字符串
+        var a=100;
+        var b=true;
+        var a1=a.toString();
+        var b1=b.toString();
+        console.log(a1,typeof a1,b1,typeof b1)
+        //2.转number
+        //整体转number，使用Number()
+        var s1='101';
+        var s2='101abc';
+        var s3=true;
+        var s4='true';
+        var s5=null;
+        var s6;
+
+        console.log(s1,typeof s1,Number(s1),typeof Number(s1))
+        console.log(s2,typeof s2,Number(s2),typeof Number(s2))
+        console.log(s3,typeof s3,Number(s3),typeof Number(s3))
+        console.log(s4,typeof s4,Number(s4),typeof Number(s4))
+        console.log(s5,typeof s5,Number(s5),typeof Number(s5))
+        console.log(s6,typeof s6,Number(s6),typeof Number(s6))
+
+        //提取字符串中的number部分
+        //1.parseInt(n)
+        //2.parseFloat(n)
+        console.log(parseInt('35.5fdsafdsa'));
+        console.log(parseFloat('35.5.3ada'));
+
+        //3.转Boolean
+        //除"零"值以外，其他数据都为真，只有"零"值为假
+        console.log(Boolean(1))
+        console.log(Boolean('1'))
+        console.log(Boolean("0"))
+        console.log(Boolean(" "))
+        console.log(Boolean(true))
+        //以下为"0"值
+        console.log(Boolean(null))
+        console.log(Boolean(0))
+        console.log(Boolean(0.0))
+        console.log(Boolean(''))
+        console.log(Boolean(undefined))
+        console.log(Boolean(NaN))
+
+        //自动类型转换（以数学运算为例：+-*/%）
+        var r1="小泽"+"Maria"
+        var r2="小泽"+31;//"小泽31"
+        var r3="小泽"+true;
+        var r4="小泽"+null
+        var r5="小泽"+undefined
+        console.log(r1,r2,r3,r4,r5)
+
+        //其他情况
+        var r6='100'+100
+        var r7='100'-'5'
+        var r8='100'-5
+        var r9='100'-true
+        var r10='100a'-5
+        var r11='100a'-true
+        var r12='100'-'true'
+        var r13='100a'+'true'
+        var r14=true+100
+        var r15=true+true
+        var r16=null+100
+        console.log(r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16)
+
+    </script>
+    <meta charset="UTF-8">
+    <title>转换数据类型</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+    <script>
+    /*
+        console.log(window)
+        //window对象的方法
+        //1.网页弹框
+        alert("警告框，无返回值")
+        var r=confirm("确认框，是否确认，有返回值")    //返回布尔值
+        console.log(r)
+        var r1=prompt("输入框：",0) //第二个参数表示输入框中的默认值
+        console.log(r1)
+
+
+            全局变量和全局函数都是window对象的属性和方法
+
+        var a=100
+        function a1(){
+            console.log("a1被调用")
+        }
+        console.log(a,window.a)
+        a1()
+        window.a1()
+
+
+        //2.窗口的打开和关闭
+        //window.open("http://www.baidu.com")
+        window.close()
+    */
+        //给出确认框，当点击确定时打开目标文件，点击取消时关闭当前窗口
+        var res=confirm("是否打开百度")
+        if(res){
+            window.open("http://www.baidu.com")
+        }else{
+            window.close()
+        }
+
+
+    </script>
+</head>
+<body>
+    <a href="02_setinterval.html">页面3</a>
+    <button onclick="history.back()">返回</button>
+    <button onclick="history.forward()">前进</button>
+</body>
+</html>

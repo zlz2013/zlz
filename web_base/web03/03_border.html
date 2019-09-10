@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>边框</title>
+    <style>
+        h1{
+            width:300px;
+            height:100px;
+            border:solid;
+            background:pink;
+        }
+        #d1{
+            border:5px double red;
+        }
+        #d2{
+            border:4px dashed yellow;
+        }
+        #d3{
+            border:3px dotted green;
+        }
+        #d4{
+            border:2px dashed blue;
+        }
+        #d5{
+            border:1px double #f0f;
+        }
+        div{
+            width:0px;
+            height:0px;
+            /*
+            border-top:10px solid red;
+            border-right:10px solid transparent;
+            border-bottom:10px solid transparent;
+            border-left:10px solid transparent;
+            */
+            border:10px solid transparent;
+            border-right:10px solid green;
+        }
+        span{
+            /*1.
+            display:inline-block;
+            width:1000px;
+            height:1000px;*/
+            /*行内元素默认不能手动调宽高，空标签默认宽度为0.
+            默认高度与字体大小有关，可以设置字体大小为0实现高度为0的效果*/
+            font-size:0px;
+            border-top:10px solid red;
+            border-right:10px solid green;
+            border-bottom:10px solid blue;
+            border-left:10px solid gray;
+            /*2.
+            border:10px solid transparent;
+            border-right:10px solid green;*/
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <h1 id="d1"></h1>
+    <h1 id="d2"></h1>
+    <h1 id="d3"></h1>
+    <h1 id="d4"></h1>
+    <h1 id="d5"></h1>
+</body>
+</html>

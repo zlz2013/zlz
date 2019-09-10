@@ -1,0 +1,50 @@
+/*清除浏览器的默认样式*/
+
+
+/*轮播图*/
+#banner{
+    margin:30px auto;
+    height:500px;
+    position:relative;
+}
+#banner>img{
+    width:990px;
+    height:500px;
+}
+#banner ul{
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    /*background:white;*/
+    margin-left:-75px;
+
+}
+#banner li{
+    float:left;
+    width:20px;
+    height:20px;
+    background:grey;
+    border-radius:50%;
+    margin-left:10px;
+}
+#banner ul>li:first-child{
+    margin:0;
+    background:red;
+}
+#banner>a{
+    position:absolute;
+    width:20px;
+    height:30px;
+    top:50%;
+    margin-top:-15px;
+    background:gray;
+    text-align:center;
+    line-height:30px;
+}
+
+.prev{
+    left:10px;
+}
+.next{
+    right:10px;
+}

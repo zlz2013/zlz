@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        #box{
+            width:500px;
+            margin:0 auto;
+            background:orange;
+            position:relative;
+        }
+        #d1,#d2{
+            width:200px;
+            height:200px;
+            background:red;
+            }
+        #d1{
+            background:green;
+            /*绝对定位,绝对定位的元素会脱离文档流不在占位*/
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+        body{
+            /*设置为定位元素*/
+            position:relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="d1"></div>
+        <div id="d2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>switch语句</title>
+    <script>
+        /*var week=Number(prompt("请输入0-6之间的数字："))
+        switch(week){
+            case 0:
+                //变量值与case列举的值匹配全等时执行的代码
+                console.log("星期日")
+                break
+            case 1:
+                console.log("星期一")
+                break
+            default:
+                console.log("请输入合法值")
+        }*/
+
+        //多个case共用代码段
+        var year=Number(prompt("请输入年份"))
+        var month=Number(prompt("请输入月份"))
+        var day=Number(prompt("请输入天数"))
+        var sum=0
+        switch(month-1){
+            case 11:
+                sum+=30
+            case 10:
+                sum+=31
+            case 9:
+                sum+=30
+            case 8:
+                sum+=31
+            case 7:
+                sum+=31
+            case 6:
+                sum+=30
+            case 5:
+                sum+=31
+            case 4:
+                sum+=30
+            case 3:
+                sum+=31
+            case 2:
+                sum+=28
+                if(year%4==0&&year%100!=0||year%400==0){
+                    sum++
+                }
+            case 1:
+                sum+=31
+        }
+        sum+=day
+        console.log(sum)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

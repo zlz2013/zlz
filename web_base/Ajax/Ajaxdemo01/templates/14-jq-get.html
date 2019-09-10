@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $('#btnShow').click(function(){
+                $.get('/ajax/09-json-users',function(resText){
+                    //业务处理,由于type类型是JSON，所以resText直接当成js对象处理
+                    $(resText).each(function(i,obj){
+                        console.log("姓名:"+obj.fields.uname)
+                        console.log("密码:"+obj.fields.upwd)
+                        console.log("邮箱:"+obj.fields.uemail)
+                        console.log("昵称:"+obj.fields.nickname)
+                    })
+
+                },'json')
+
+
+
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btnShow">显示Users</button>
+
+</body>
+</html>

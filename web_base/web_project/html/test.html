@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            /*全选和去选全选*/
+            $("#checkAll").click(function(){
+                var value=$(this).prop("checked")
+                $(".checkItem").prop("checked",value)
+            })
+            /*2.反选
+                被选中的商品数量等于商品按钮的数量。视为全选
+                未被选中的商品数量为0，视为全选
+            */
+        /*    //方式一
+            $(".checkItem").click(function(){
+                //判断列表中有几个选中元素
+                //遍历jQuery列表
+                var i=0
+                $(".checkItem").each(function(elem1,elem2){
+                    //console.log(elem1,elem2)
+                    var r=$(this).prop("checked")
+                    if(r){
+                        i++
+                    }
+                })
+                //判断是否全选
+                if (i==$(".checkItem").length){
+                    $("#checkAll").prop("checked",true)
+                }else{
+                    $("#checkAll").prop("checked",false)
+                }
+            })
+        */
+            //方式二 未被选中的商品数量为0
+            $(".checkItem").click(function(){
+                //获取被选中的商品数量
+                //伪类:checked表示按钮的选中状态
+                //console.log($(".checkItem:checked").length)
+                //否定筛选 not()
+                var len=$(".checkItem").not(".checkItem:checked").length
+                console.log(len)
+                if(len==0){
+                    $("#checkAll").prop("checked",true)
+                }else{
+                    $("#checkAll").prop("checked",false)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <input type="checkbox" name="" id="checkAll">全选
+    </p>
+    <p>
+        <input type="checkbox" name="" class="checkItem">商品
+    </p>
+    <p>
+        <input type="checkbox" name="" class="checkItem">商品
+    </p>
+    <p>
+        <input type="checkbox" name="" class="checkItem">商品
+    </p>
+</body>
+</html>

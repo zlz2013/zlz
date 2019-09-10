@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var b=10
+        //单独与变量结合，前缀和后缀没有区别
+        b++
+        ++b
+        console.log(b)
+        var b2=b++
+        console.log(b2,b)//12,13
+        var b3=++b
+        console.log(b3,b)//14,14
+        var c=10
+        var c1=--c
+        console.log(c1,c)//9,9
+        var c2=c--
+        console.log(c2,c)//9,8
+
+        //自增和自减的结果永远是number值
+        var s='10'
+        s++
+        console.log(s,typeof s)
+
+        var n=5
+        var r=n++ + ++n + n++ + ++n +n
+        console.log(r,n)
+        /*
+        r=r1+r2+r3+r4+r5
+        r1 n 5 6
+        r2 n 7 7
+        r3 n 7 8
+        r4 n 9 9
+        r5 n 9 9
+        */
+
+
+        //2.关系运算
+        var d1=10>2
+        var d2='210'>'2'
+        var d3='1'>null
+        var d4='小泽'>'超哥'
+        console.log(d1,d2,d3,d4)
+
+        //获取字符的unicode编码：charCodeAt(index)
+        s1='小'
+        s2='超'
+        console.log(s1.charCodeAt(),s2.charCodeAt())
+
+        var res1='10'>2//10>2:true
+        var res2='10'>true//10>1:true
+        var res4=true>false//1>0:true
+        var res5='10'>undefined//10>NaN:false
+        var res6='10'>null//10>0:true
+        var res7='true'>false//NaN>0:false
+        console.log(res1,res2,res4,res5,res6,res7)
+
+
+        //相等和全等:看类型
+        var r1=10=='10'
+        var r2=10==='10'
+        console.log(r1,r2)
+
+        //逻辑运算符：&& || ！
+        //给出闰年判断的条件
+        var s=prompt('请输入年份：')
+        var r=s%4==0 && s%100!=0 || s%400==0
+        console.log(r,s)
+
+        //逻辑非：对布尔值取反
+        var r1=!5//false
+        //逻辑非的优先级高于关系运算符
+        var r2=!5<3//false<3:true
+        console.log(r1,r2)
+
+        //三目运算符
+        var a=10
+        if (a>5){
+            console.log("成立")
+        }else{
+            console.log("不成立")
+        }
+
+       var res= a>5 ? "OK" : "error"
+       console.log(res)
+
+       a=3
+       var res2= a>5? "OK" : a>=3? "大于3":"小于3"
+       console.log(res2)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

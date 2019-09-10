@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距合并</title>
+    <style>
+        body{
+            margin:0;
+            border:1px solid blue;
+            padding-top:.1px;
+        }
+        div{
+            width:200px;
+            height:200px;
+            background:red;
+            margin-top:100px;
+            margin-bottom:200px;
+        }
+        h1{
+            width:200px;
+            height:200px;
+            background:green;
+            margin-top:100px;
+        }
+        b,span{
+            background:orange;
+            margin:10px 50px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="helper.css">
+</head>
+<body>
+    <!--第一个子元素的margin-top作用于父元素上
+    解决：1.父元素添加顶部边框
+         2.父元素添加padding-top：0.1px-->
+
+    <div></div>
+    <!--同时设置垂直方向上的边距，取最大值-->
+    <h1></h1>
+    <!--行内元素不支持垂直边距，水平方向上外边距叠加显示-->
+    <b>加粗</b>
+    <span>span文本</span>
+    <h2></h2>
+    <p></p>
+    <ul></ul>
+    <form action=""></form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+        //匿名函数的使用，自执行(匿名函数的声明)(实参)
+        (function (){
+            //构建局部作用域
+            var a=100
+            console.log("匿名函数自执行",a)
+        })
+        ()
+
+        //定义变量接收匿名函数
+        var fn=function (){
+            console.log("fn被调用")
+        }
+        fn()
+        console.log(fn)
+        function fm(){
+            console.log("fm被调用")
+        }
+        fm()
+        console.log(fm)
+
+        //函数作为参数
+        function show(f){
+            console.log("show:",f)
+            f()
+        }
+        show(fn)            //f==fn
+        show(function (){
+            console.log("匿名函数被传递")
+            }) //f==fnction (){}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

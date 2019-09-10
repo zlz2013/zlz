@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <style>
+        /*第二部分轮播图*/
+        #banner{
+            width:990px;
+            /*居中*/
+            margin:0 auto;
+        }
+        #banner{
+            margin:30px auto;
+            height:500px;
+            position:relative;
+        }
+        #banner>img{
+            width:990px;
+            height:500px;
+        }
+        #banner ul{
+            position:absolute;
+            bottom:10px;
+            left:50%;
+            background:green;
+            margin-left:-75px;
+            /*width:150px;*/
+            }
+        #banner li{
+            float:left;
+            width:20px;
+            height:20px;
+            background:red;
+            border-radius:50%;
+            margin-left:10px;
+        }
+        #banner ul>li:first-child{
+            margin:0;
+        }
+        #banner a{
+            /*元素脱流之后，可以手动调整尺寸，默认打下由内容决定*/
+            position:absolute;
+
+            width:60px;
+            height:30px;
+            background:green;
+            top:50%;
+            margin-top:-15px;
+            }
+        .prev{
+            left:10px;
+        }
+        .next{
+            right:10px;
+        }
+        #img1{
+            position:relative;
+            z-index:0;
+
+        }
+        #img2{
+            position:relative;
+            z-index:1;
+            top:-500px;
+            overflow:auto;
+            display:line-bock;
+            }
+        #img3{
+            position:relative;
+            z-index:2;
+            top:-1000px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--1.实现网页轮播图
+            方式一：图片隐藏与显示
+            方式二：切换图片路径
+        2.参照效果图
+        -->
+    <div id="banner">
+        <img src="wxy.jpeg" id="img1">
+        <img src="2.jpg" id="img2">
+        <img src="happy.gif" id="img3">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <!--javascript:void(0)阻止超链接默认的跳转行为-->
+        <a href="javascript:void(0)" class="prev">上一张</a>
+        <a href="javascript:void(0)" class="next">下一张</a>
+    </div>
+    <script>
+        var elem=document.getElementsByTagName('img')
+        console.log(elem)
+        i=0
+
+            var timerId=setInterval(function(){
+
+                if(i==3){
+                    i=0
+                }else{
+                    elem[i].style="z-index:3;"
+                    console.log(i)
+                    i++
+                }
+            },3000)
+
+
+
+
+    </script>
+</body>
+</html>

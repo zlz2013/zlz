@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <style>
+        #top{
+
+            background:grey;
+            height:30px;
+            text-align:center;
+        }
+        .left{
+            float:left;
+            width:300px;
+            background:green;
+           }
+       .right{
+            float:right;
+            width:300px;
+            background:green;
+            }
+        ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        ol{
+            display:none;
+
+        }
+        li{
+            margin:0;
+            padding:0;
+            list-style:none;
+            float:left;
+            margin-right:10px;
+
+        }
+        .nav:hover ol{
+            display:block;
+
+        }
+        #a1{
+            position:relative;
+            z-index:0;
+        }
+        #a2{
+            position:relative;
+            left:-440px;
+            top:0px;
+            overflow:auto;
+            display:line-bock;
+        }
+        .c1{
+            position:fixed;
+            top:200px;
+            left:8px;
+            z-index:3;
+        }
+        .c2{
+            position:fixed;
+            top:200px;
+            left:452px;
+            z-index:3;
+        }
+        #a1:hover{
+            z-index:2;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <div class="left">
+            <ul>
+                <li class="nav"><a href="">首页</a>
+                    <ol>
+                        <li>北京</li>
+                        <li>上海</li>
+                        <li>广东</li>
+                        <li>深圳</li>
+                    </ol>
+                </li>
+                <li><a href="">物流</a></li>
+                <li><a href="">客服</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="">淘宝</a></li>
+                <li><a href="">京东</a></li>
+                <li><a href="">苏宁</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div >
+        <img src="2.jpg" id="a1">
+        <img src="wxy.jpeg" id="a2">
+        <button class="c1">上一张</button>
+        <button class="c2">下一张</button>
+    </div>
+
+</body>
+</html>

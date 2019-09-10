@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>表单事件</title>
+    <script>
+        window.onload=function(){
+            //窗口加载完毕后执行
+            console.log("window.onload")
+            //输入框相关
+            uname.onfocus=function(){
+                console.log("获取焦点")
+            }
+            uname.onblur=function(){
+                //this:指代事件的触发对象或函数的调用者
+                console.log("失去焦点",this,uname.value,this.value)
+            }
+            //实时监听输入
+            uname.oninput=function(){
+                console.log("oninput:",this.value)
+            }
+            //监听前后两次输入的内容是否一致
+            uname.onchange=function(){
+                //只有前后两次输入不一致，并且失去焦点时才触发
+                console.log("onchange:",this.value)
+            }
+            //监听按钮状态的改变
+            savePwd.onchange=function(){
+                //按钮有选中和未选中两种状态，对应checked属性值为true/false
+                console.log(this.checked)
+            }
+            //监听表单中的护具是否可以提交
+            /*
+                交由form元素监听，在点击提交按钮时触发,允许返回布尔值
+                True表示允许发送，false表示阻止发送
+            */
+            form.onsubmit=function(){
+                //用户名为空时，阻止提交
+                if(uname.value==""){
+                    return false
+                }else{
+                    return true
+                }
+            }
+
+        }
+        function fn(){
+            console.log(this)
+        }
+        fn()
+    </script>
+</head>
+<body>
+    <form action="/login" method="get" enctype="" id="form">
+        用户姓名：<input type="text" name="uname" id="uname"><br>
+        用户密码：<input type="checkbox" id="savePwd"><br>
+        <input type="submit">
+    </form>
+    <ul>
+        <li>
+            <span id="city">北京</span>
+            <ol id="ol">
+                <li>北京</li>
+                <li>上海</li>
+                <li>广州</li>
+                <li>深圳</li>
+            </ol>
+        </li>
+    </ul>
+    <script>
+        console.log("测试")
+        //获取内层li元素列表
+        var list=ol.children
+        for(var i=0;i<list.length;i++){
+            console.log(list[i])
+            list[i].onclick=function(){
+                //传值,this指代事件触发对象
+                console.log(this)
+                city.innerHTML=this.innerHTML
+            }
+        }
+    </script>
+</body>
+</html>

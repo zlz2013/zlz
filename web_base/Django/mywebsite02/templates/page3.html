@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div><a href="{% url 'page3' %}">跳转到第3页</a></div>
+    <div><a href="{% url 'pagen' n %}">跳转到第{{n}}页</a></div>
+    <div><a href="{% url 'pagen' 200 %}">跳转到第200页</a></div>
+</body>
+</html>

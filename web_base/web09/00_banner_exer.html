@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图练习</title>
+    <style>
+        #banner{
+            width:600px;
+            height:400px;
+            margin:0 auto;
+        }
+        #banner img{
+            width:600px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <img src="2.jpg" alt="" id="img1">
+    </div>
+    <script>
+        //1.准备图片路径
+        var imgArr=["happy.gif","wxy.jpeg","2.jpg"]
+        //2.保持图片索引
+        var index=0
+        //3.开启定时器（间歇调用）
+        var timer=setInterval(autoPlay,2000)
+        function autoPlay(){
+            //更新索引
+            index++
+            //判断是否越界
+            if(index==imgArr.length){
+                index=0
+            }
+            //切换图片路径
+            img1.src=imgArr[index]
+        }
+
+    </script>
+</body>
+</html>

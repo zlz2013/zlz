@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<div><a href="/page3">回到到第3页</a></div>-->
+    <div><a href="{% url 'page3' %}">回到到第3页</a></div>
+    <div><a href="/page/{{n}}">回到第{{n}}页</a></div>
+</body>
+</html>

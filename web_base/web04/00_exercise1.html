@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>仿照百度</title>
+    <style>
+        #nav,#search{
+            width:650px;
+            margin:0 auto;
+            border:1px solid red;
+            /*border-radius:15px;*/
+        }
+        #nav{
+            margin-bottom:50px;
+            height:30px;
+            background:gray;
+            font-size:0px;
+        }
+        a{
+            text-decoration:none;
+            color:#fff;
+            display:inline-block;
+            width:122px;
+            height:30px;
+            text-align:center;
+            line-height:30px;
+            font-size:20px;
+            background:green;
+            /*行内块元素是完全支持盒模型的属性的*/
+            /*margin:5px 10px;*/
+            margin-right:10px;
+            border-radius:15px;
+        }
+        .no-margin{
+            margin:0;
+        }
+        #search{
+            height:50px;
+            /*background:gray;*/
+            font-size:0px;
+        }
+        input{
+            width:500px;
+            height:50px;
+            /*border-radius:25px;*/
+            /*调整盒模型的计算方式，取值为border-box时，
+            表示当前元素指定的width/height是包含边框在内区域的尺寸*/
+            box-sizing:border-box;
+
+        }
+        button{
+            width:150px;
+            height:50px;
+            /*水平方向上元素之间的垂直对齐方式，
+            可取top/middle/bottom*/
+            vertical-align:top;
+            font-size:24px;
+            /*border-radius:25px;*/
+        }
+    </style>
+</head>
+<body>
+    <!--导航栏-->
+    <div id="nav">
+        <a href="">天猫</a>
+        <a href="">京东</a>
+        <a href="">苏宁</a>
+        <a href="">斗鱼</a>
+        <a href="" class="no-margin">虎牙</a>
+    </div>
+    <!--搜索栏-->
+    <div id="search">
+        <input type="text">
+        <button>百度一下</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+</head>
+<body>
+    <input type="text" id="uinput">
+    <span id="code"></span>
+    <button id="btn">验证</button>
+    <script>
+        //元素的id属性值作为变量直接操作，存储元素对象本身
+        console.log(code)
+        //操作元素内容
+        //code.innerHTML="动态添加"
+
+        //生成四位验证码
+        var str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        var show=""
+        for(var i=1;i<5;i++){
+            //生成随机下标
+            //Math.floor()向下取整
+            var ceshi=Math.random()*str.length
+            var index=Math.floor(ceshi)
+            console.log(index,ceshi,str.length,Math.random())
+            show+=str[index]
+        }
+        code.innerHTML=show
+        //动态绑定事件
+        btn.onclick=function(){
+            //获取输入框的值
+            console.log(uinput.value)
+            //验证
+            if(uinput.value.toUpperCase()==show.toUpperCase()){
+                alert("输入正确")
+            }else{
+                alert("输入有误")
+            }
+        }
+
+
+        //Math对象
+        //1.向上取整：舍弃小数位，整数位+1
+        console.log(Math.ceil(0.99))    //1
+        //2.向下取整：舍弃小数位，保留整数位
+        console.log(Math.floor(0.99))   //0
+        //3.四舍五入取整
+        console.log(Math.round(0.49))   //0
+        console.log(Math.round(0.5))    //1
+
+        //随机小数：生成0~1之间的随机小数
+        console.log(Math.random())
+
+
+    </script>
+</body>
+</html>

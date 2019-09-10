@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>层级结构获取元素</title>
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <div id="box">
+        <b>加粗</b>
+        <span>参考</span>
+        <p>
+            <span>div->p->span</span>
+        </p>
+        <span>参考</span>
+        <b>加粗</b>
+    </div>
+    <script>
+        //获取父元素
+        console.log($("p").parent())
+        //获取祖先元素
+        console.log($("p").parents(),$("p").parents('#box'))
+        //获取直接子元素数组
+        console.log($("div").children(),$("div").children("span"))
+        //获取所有后代元素
+        console.log($("div").find("span"))
+        //$("div").find("span").html("修改")
+        //获取前后相邻的兄弟元素
+        console.log($("p").prev(),$("p").next())
+        console.log($("p").prev('b'),$("p").next('b'))
+        //获取所有的兄弟元素
+        console.log($("p").siblings(),$("p").siblings('b'))
+
+
+        //元素的创建
+        var h1=$("<h1 id='d2'>动态创建</h1>")
+        var h2=$("<h2></h2>")
+        h2.html("二级标题").css("color","red").attr("id","d3")
+        console.log(h1,h2)
+
+        //添加节点
+        //作为子元素添加到父元素的头尾
+        //$("#box").append(h2)    //追加至末尾
+        //$("#box").prepend(h1)   //追加至开头
+        //作为兄弟元素添加
+        $("#box").after(h2)     //追加到之后
+        $("#box").before(h1)    //追加到之前
+        var h3=$("<h3 >div头</h3>")
+        var h4=$("<h4 >div尾</h4>")
+        var a1=$("<a href=''>h3前</a>")
+        var a2=$("<a href=''>h4后</a>")
+        $("#box").append(h4)
+        $("#box").prepend(h3)
+        $("h4").after(a2)
+        $("h3").before(a1)
+
+        a1.remove()
+    </script>
+
+</body>
+</html>

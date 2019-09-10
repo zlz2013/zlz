@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>内边距</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            border:1px solid green;
+            /*padding:10px 50px;*/
+            padding-top:20px;
+            padding-right:20px;
+            padding-bottom:20px;
+            padding-left:20px;
+        }
+        h1{
+            width:200px;
+            height:200px;
+            background:pink;
+            border:1px solid red;
+            padding:50px;
+        }
+        span{
+            width:200px;
+            height:200px;
+            background:orange;
+            border:1px solid blue;
+            /*行内元素对盒模型属性不完全支持
+            不能设置宽高，不支持上下内边距*/
+            padding:50px 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>老祁真逗</div>
+    <h1>小泽玛利亚</h1>
+    <span>老王真牛逼</span>
+</body>
+</html>

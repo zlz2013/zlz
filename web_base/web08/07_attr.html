@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>属性</title>
+    <script src="index.js">
+
+    </script>
+    <style>
+        #main{
+            color:red;
+
+        }
+        .c1{
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <h1>小泽真温柔</h1>
+    <script>
+        //获取元素节点
+        var h1=$("h1")
+        //操作属性
+        h1.setAttribute("id","d1")
+        h1.setAttribute("class","c1")
+        console.log(h1.getAttribute("class"))
+        h1.removeAttribute("id")
+
+        //点语法
+        h1.id="box"
+        h1.className="c1 c2"
+        console.log(h1.id,h1.className)
+        h1.id=""
+        h1.className=null
+
+        //操作样式
+        //1.通过操作元素的id/class属性，对应选择器的样式
+        h1.id="main"
+        h1.className="c1"
+
+        //2.操作行内样式
+        console.log(h1.style)
+        //直接赋值
+        h1.style="width:200px;height:200px;"
+        //单独调整样式,h1.style返回样式表对象，由css的属性组成
+        h1.style.width="300px"
+        h1.style.textAlign="center"
+        h1.style.lineHeight="200px"
+    </script>
+</body>
+</html>

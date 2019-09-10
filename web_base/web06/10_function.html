@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+        //1.无参数无返回值的函数
+        //函数声明
+        function f1(){
+            console.log("f1被调用")
+        }
+        f1()
+
+        //2.带有参数的函数
+        //允许形参与实参的个数不匹配
+        function f2(a,b){
+            console.log(a*a,b)
+            //函数内部可以使用arguments获取实际传递的参数
+            //形参未传值，默认为undefined
+            console.log(arguments)
+        }
+        f2(10,5,20)
+
+        //3.带有返回值的函数
+        function f3(a){
+            var r1=a*a
+            var r2=a+a
+            return r1,r2
+        }
+        console.log(f3(10))
+
+        //全局变量与局部变量
+        /*
+        全局变量
+            1.函数体外部声明的变量一定是全局变量
+            2.一切var关键字创建的变量都是全局变量
+        局部变量
+            在函数内部使用var关键字创建的变量为局部变量
+
+        */
+        var age=18
+        function fn(){
+             var age=28
+             var name="老王"
+            console.log(age)
+        }
+        fn()
+        console.log(age,name)
+        /*
+            使用函数封装日期计算：
+            闰年判断封装成函数
+            主体功能封装成函数，通过按钮点击调用
+            <button onclick="fn()">
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

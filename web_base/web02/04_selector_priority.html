@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器优先级</title>
+    <style>
+        .c1{
+            color:blue;
+        }
+        #d1{
+            color:pink;
+        }
+        h1{
+            color:red;
+        }
+        h1{
+            color:green;
+        }
+        /*十六进制表示颜色，以#前缀，每两位为一组，代表一种三原色
+        （R，G，B），每位字符取值范围0~9，a~f,ff:(255)*/
+        div h1{
+            /*权重：1+1*/
+            color:black;
+        }
+        div .c1{
+            /*权重：1+10*/
+            color:black;
+        }
+        div #d1{
+            /*权重：1+100*/
+            color:#000000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="d1" class="c1">小泽玛利亚</h1>
+    </div>
+</body>
+</html>

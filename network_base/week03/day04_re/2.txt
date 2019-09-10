@@ -1,0 +1,26 @@
+RP/0/RSP0/CPU0:2_c-leaf-1# : '' 
+BVI1 : 192.168.100.254/24 :10f3.116c.e6a7
+BVI100 : 192.168.1.100/24 :10f3.116c.e6a7
+BVI101 : 1.1.1.2/24 :10f3.116c.e6a7
+BVI201 : 192.168.1.2/24 :10f3.116c.e6a7
+Loopback0 : '' 
+Loopback100 : '' 
+Null0 : '' 
+nve1 : '' 
+tunnel-te11 : '' 
+tunnel-te24 : '' 
+MgmtEth0/RSP0/CPU0/0 : 10.124.3.85/24 :10f3.114b.2539
+MgmtEth0/RSP0/CPU0/1 : '' 
+TenGigE0/0/1/0 : '' 
+TenGigE0/0/1/1 : '' 
+TenGigE0/0/1/2 : '' 
+TenGigE0/0/1/3 : '' 
+TenGigE0/0/2/0 : 1.0.0.1/30 :10f3.114b.9778
+TenGigE0/0/2/0.49 : '' 
+TenGigE0/0/2/1 : '' 
+TenGigE0/0/2/1.12 : 10.1.2.2/30 :10f3.114b.9779
+TenGigE0/0/2/1.25 : 10.2.5.1/30 :10f3.114b.9779
+TenGigE0/0/2/1.100 : '' 
+TenGigE0/0/2/1.200 : '' 
+TenGigE0/0/2/2 : '' 
+TenGigE0/0/2/3 : '' 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+
+    <script>
+        console.log("hello world");
+        document.write("<h1>动态添加</h1>")
+    </script>
+
+    <!--使用src属性引入外部的js文件-->
+    <script src="index.js"></script>
+</head>
+<body>
+    <!--元素绑定事件
+        网页弹框：
+        alert(""):网页警告框
+    -->
+    <h1 onclick='document.write("<h1>呵呵呵</h1>")'>点击</h1>
+    <!--通过script标签书写JS语句-->
+    <script>
+        //单行注释
+        /*多行注释*/
+        console.log("控制台输出");
+        //带有输入框的弹框
+        //prompt("请输入用户名");
+        document.write("<h1>动态添加</h1>");
+    </script>
+</body>
+</html>

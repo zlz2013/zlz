@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <script>
+    /*
+        事件对象：保存与当前事件相关的所有信息，
+        伴随事件发生自动创建,自动作为参数，传递到事件处理函数中
+        只需要在事件处理函数中定义形参接收即可
+    */
+
+    //1.鼠标事件
+        div.onclick=function(e){
+
+            /*
+                鼠标事件对象，主要保存鼠标的位置信息
+                offsetX offsetY:获取鼠标在元素坐标洗中的位置
+            */
+            console.log("单击",e.offsetX,e.offsetY)
+        }
+        div.ondblclick=function(e){
+            console.log("双击",e)
+        }
+        div.onmouseover=function(){
+            console.log("鼠标移入")
+            div.style.background="red"
+        }
+        div.onmouseout=function(){
+            console.log("鼠标移出")
+            div.style.background="green"
+        }
+        div.onmousemove=function(){
+            console.log("鼠标移动")
+        }
+    //2.键盘事件
+        /*
+            键盘事件对象
+            key属性返回按键对应的字符
+            onkeydown:获取事件对象的which，功能减返回键盘编码
+            字符键一律返回大写字母的ASCII编码
+            onkeypress:获取事件对象的which，返回字符键的ASCII编码值
+            区分大小写
+        */
+
+        onkeydown=function(e){
+            console.log("键盘被按下",e)
+        }
+        onkeypress=function(){
+            console.log("字符被按下")
+        }
+        onkeyup=function(){
+            console.log("按键被抬起")
+        }
+    </script>
+</body>
+</html>

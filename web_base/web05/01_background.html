@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>背景图片</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color:green;
+            background-image:url(happy.gif);
+            background-repeat:no-repeat;
+            /*background-position:50% 50%;*/
+            margin:200px auto;
+            /*background-position:center;*/
+            /*background-size:100px 200px;*/
+        }
+        /*div:hover{
+            background-position:-100px -20px;
+        }*/
+        h1{
+            width:500px;
+            height:500px;
+            background-color:pink;
+            background-image:url(2.jpg);
+            margin:0 auto;
+            /*cover将图片等比拉伸至足够大，完全覆盖元素，超出部分不可见
+              contain：包含，将图片拉伸至刚好被元素容纳，*/
+            background-size:contain;
+            background-repeat:no-repeat;
+            background:pink url(wxy.jpeg) no-repeat 100% 100%;
+            background-size:100% 100%;
+        }
+        h2{
+            width:500px;
+            height:500px;
+            background:cyan url(2.jpg) no-repeat center;
+            font:italic bold 20px '黑体';
+        }
+    </style>
+</head>
+<body>
+    <h2>你好啊</h2>
+    <div></div>
+    <h1></h1>
+</body>
+</html>

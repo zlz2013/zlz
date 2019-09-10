@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mian{
+            position:relative;
+        }
+        #show{
+            width:250px;
+            min-height:150px;
+            border:1px solid #000;
+            background:#fff;
+            position:absolute;
+            left:79px;
+            top:33px;
+            display:none;
+        }
+    </style>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+
+        $(function(){
+            $('#uname').keyup(function(){
+                //判断文本框的值去掉空格后是否为空，不为空发送ajax请求
+                if(this.value.trim().length==0){
+                    $('#show').html('')
+                    $('#show').css('display','none')    //隐藏#show
+                }else{
+                    $.get('/ajax/15-server','kw='+this.value,function(resText){
+                       if(resText.length==0){
+                            $('#show').html('')
+                            $('#show').css('display','none')
+                       }else{
+                            $(resText).each(function(i,obj){
+                                $('#show').html('')
+                                $("#show").css("display","block")   //显示#show
+                                var $p=$("<p>"+obj+"</p>")
+                                $('#show').append($p)
+                            })
+                       }
+                    },'json')
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <div id="main">
+        用户名称:
+        <input type="text" id="uname">
+        <button>搜索</button>
+        <!--提示框：结对定位，相对于main实现位置的摆放-->
+        <div id="show"></div>
+    </div>
+
+</body>
+</html>

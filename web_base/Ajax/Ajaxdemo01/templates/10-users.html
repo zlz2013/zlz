@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $('#btnShow').click(function(){
+                var xhr=createXhr()
+                xhr.open('get','/ajax/09-json-users/',true)
+
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4&&xhr.status==200){
+                        //接收响应数据并转换成JS数组
+                        var arr=JSON.parse(xhr.responseText)
+                        console.log(arr)
+                        var html=''
+                        $(arr).each(function(i,infos){
+                            html+="<tr>"
+                            html+='<td>'+infos.pk+'</td>'
+                            html+='<td>'+infos.fields.uname+'</td>'
+                            html+='<td>'+infos.fields.upwd+'</td>'
+                            html+='<td>'+infos.fields.uemail+'</td>'
+                            html+='<td>'+infos.fields.nickname+'</td>'
+                            html+="</tr>"
+                        })
+                        $('#content').html(html)
+                    }
+
+                }
+                xhr.send(null)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btnShow">显示</button>
+    <table width="500" border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>用户名</td>
+                <td>密码</td>
+                <td>邮箱</td>
+                <td>昵称</td>
+            </tr>
+
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+</body>
+</html>

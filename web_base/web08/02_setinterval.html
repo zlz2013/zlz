@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <script>
+
+
+    </script>
+</head>
+<body>
+    <button id="start">开启</button>
+    <button id="stop1">关闭</button>
+    <button onclick="history.back()">返回</button>
+    <button onclick="history.forward()">前进</button>
+    <h1 style="text-align:center;" id="show"></h1>
+    <script>
+        start.onclick=function(){
+            //开启定时器
+            timer=setInterval(function(){
+                //在控制台中每隔1秒打印时间
+                //打印日期时间 (Data)
+                var date=new Date()
+                console.log(date)
+            },1000)
+            console.log("------")
+        }
+        stop1.onclick=function(){
+            //关闭间歇调用
+            clearInterval(timer)
+        }
+
+        //控制台输出5秒的倒计时
+        var i=5
+        show.innerHTML=i
+        var timerId=setInterval(function(){
+            i--
+            if(i!=0){
+                show.innerHTML=i
+            }else{
+                show.innerHTML="倒计时结束"
+                //停止计时器
+                clearInterval(timerId)
+            }
+
+
+        },1000)
+
+    </script>
+</body>
+</html>

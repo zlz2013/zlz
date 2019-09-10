@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>超时调用</title>
+</head>
+<body>
+    <button id="start">开启</button>
+    <button id="close1">关闭</button>
+    <button onclick="history.back()">返回</button>
+    <button onclick="history.forward()">前进</button>
+    <script>
+        start.onclick=function(){
+            //开启超时调用
+            timer=setTimeout(function(){
+                console.log("超时调用")
+            },1000)
+        }
+        close1.onclick=function(){
+            clearTimeout(timer)
+        }
+
+    </script>
+
+</body>
+</html>

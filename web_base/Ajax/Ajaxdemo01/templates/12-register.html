@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $('#btnReg').click(function(){
+                var xhr=createXhr()
+                var params={
+                    uname:$("#uname").val(),
+                    upwd:$("#upwd").val(),
+                    uemail:$("#uemail").val(),
+                    nickname:$("#nickname").val()
+                }
+                //将params转换成json串
+                var str=JSON.stringify(params)
+                xhr.open('get','/ajax/12-server?params='+str,true)
+
+                xhr.onreadystatechange=function()
+                {
+                    if(xhr.readyState==4&&xhr.status==200)
+                    {
+                        alert(xhr.responseText)
+                    }
+                }
+
+
+                xhr.send(null)
+
+
+            })
+        })
+    </script>
+    <style>
+        div>label{
+            display:inline-block;
+            width:80px;
+
+        }
+        span{
+            color:red;
+
+            }
+    </style>
+</head>
+<body>
+    {% csrf_token %}
+    <div>
+        <p>
+            用户名称：
+            <input type="text"  id="uname">
+            <span id="uname-tip"></span>
+        </p>
+        <p>
+            用户密码：
+            <input type="password"  id="upwd">
+        </p>
+        <p>
+            用户邮箱：
+            <input type="email"  id="uemail">
+        </p>
+        <p>
+            用户昵称：
+            <input type="text"  id="nickname">
+        </p>
+        <p>
+            <input type="button" value="注册" id="btnReg">
+
+        </p>
+
+    </div>
+</body>
+</html>

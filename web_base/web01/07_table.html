@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+<body>
+
+    <table border="1px" width="300px" height="300px">
+        <tr>
+            <!--th表示单元格，自带文本加粗和居中效果-->
+            <!--跨列合并-->
+            <th colspan="3">个人信息</th>
+            <!--删除被合并的单元格-->
+            <!--<th>年龄</th>-->
+            <!--<th>性别</th>-->
+        </tr>
+        <tr>
+            <!--td表示单元格，无加粗和居中效果-->
+            <td>老祁</td>
+            <!--向下合并单元格（跨行合并）-->
+            <td >35</td>
+            <td rowspan="2">男</td>
+        </tr>
+        <tr>
+            <td width="100px" height="75px">小泽玛利亚</td>
+            <td>31</td>
+            <!--<td>男</td>-->
+            <!--删除被合并的单元格-->
+        </tr>
+        <tr>
+            <td>热巴</td>
+            <td>28</td>
+            <td>女</td>
+        </tr>
+    </table>
+    <table border="1px" width="300px" height="300px" bgcolor="red">
+        <!--表格内部结构划分（行分组）：-->
+        <!--将若干行划分为表头，表尾和表格主体，-->
+        <!--默认所有的行都会被自动加入表格主体中（tbody）-->
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th colspan="3">总人数：</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+            <td>热巴</td>
+            <td>28</td>
+            <td>女</td>
+            </tr>
+            <tr>
+            <td>老祁</td>
+            <td>28</td>
+            <td>男</td>
+            </tr>
+            <tr>
+            <td>小泽</td>
+            <td>33</td>
+            <td>男</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

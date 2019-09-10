@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+    <style>
+        table{
+            width:400px;
+            height:400px;
+            border:2px;
+        }
+        h5:hover{
+            background:blue;
+            font-size:28px;
+        }
+    </style>
+</head>
+<body>
+    <!--/*创建H5标签，设置初始尺寸和背景颜色，-->
+    <!--鼠标悬停是修改背景颜色*/-->
+
+    <form action="/login" method="get" enctype="application/x-www-form-urlencoded">
+
+
+        <table>
+            <tr>
+                <td colspan="2"><h1 >增加管理员</h1></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td><input type="text" maxlength="10"></td>
+                <td>10字符以内</td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" maxlength="10"></td>
+                <td>10字符以内</td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="sex" value="boy" id="boy">
+                    <label for="boy">男</label>
+                    <input type="radio" name="sex" value="girl" checked id="girl">
+                    <label for="girl">女</label>
+                </td>
+
+            </tr>
+            <tr>
+                <td rowspan="2">角色</td>
+                <td>
+                    <input type="radio" name="name" id="chaoji">
+                    <label for="chaoji">超级管理员</label>
+                </td>
+                <td rowspan="2">至少选择一个角色</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="name" id="zhangdan">
+                    <label for="zhangdan">账单管理员</label>
+                </td>
+
+            </tr>
+            <tr>
+                <td>头像：</td>
+                <td ><input type="file" style="display:block;width:182px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="保存">
+                    <input type="button" value="重填">
+                </td>
+            </tr>
+        </table>
+
+
+    </form>
+
+</body>
+</html>
